@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detyrat Ajax</title>
+</head>
+<style>
+    body {
+        font-family: sans-serif;
+
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .container {
+
+        width: 500px;
+        margin: 0 auto;
+        padding: 10px 20px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        margin-top: 200px;
+    }
+
+    #formSearch {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+        padding: 20px;
+    }
+
+
+    input,
+    select,
+    button {
+        padding: 10px;
+        font-size: 16px;
+    }
+
+    button {
+        background: rgb(49, 182, 227);
+        color: white;
+        border: none;
+        cursor: pointer;
+        transition: .3s;
+    }
+
+
+
+    #movieList {
+        margin-top: 25px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+    }
+
+    .movie-card {
+        background: #fafafa;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+    }
+
+    .movie-card img {
+        width: 100%;
+        border-radius: 5px;
+    }
+
+    .movie-card button {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    #pagination {
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    .page-btn {
+        padding: 8px 12px;
+        margin: 0 5px;
+        background: #eee;
+        border: 1px solid #ccc;
+        cursor: pointer;
+    }
+
+
+
+    #movieDetails {
+        margin-top: 30px;
+        padding: 20px;
+        background: #fafafa;
+        border-radius: 8px;
+        border: 1px solid #ddd;
+    }
+</style>
+
+<body>
+
+    <div class="container">
+        <form id="formSearch">
+            <input type="text" id="searchMovie" placeholder="Search for your favorite movie" required>
+            <label>Type</label>
+            <select id="typeSelect">
+                <option value="" selected>All</option>
+                <option value="movie">Movie</option>
+                <option value="series">Series</option>
+                <option value="episode">Episode</option>
+
+            </select>
+            <button type="submit">Search</button>
+
+        </form>
+
+        <div id="movieList"></div>
+
+        <div id="pagination"></div>
+
+        <div id="movieDetails"></div>
+
+
+
+        <div id="favoritesSection">
+            <h3>My Favorites</h3>
+            <div id="favoriteList"></div>
+        </div>
+
+    </div>
+
+    <script src="./app.js"></script>
+</body>
+
+</html>
