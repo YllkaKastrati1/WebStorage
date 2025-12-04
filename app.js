@@ -145,7 +145,8 @@ function loadMovieDetails(id, container) {
         .then(movie => {
             container.innerHTML = `
                 <h4>${movie.Title} (${movie.Year})</h4>
-                <img src="${movie.Poster !== "N/A" ? movie.Poster : "https://via.placeholder.com/200x300"}" alt="${movie.Title}" style="width:200px">
+                <img src="${movie.Poster !== "N/A" ? movie.Poster : "https://via.placeholder.com/200x300"}"
+                style="width:200px">
                 <p><strong>Genre:</strong> ${movie.Genre}</p>
                 <p><strong>Director:</strong> ${movie.Director}</p>
                 <p><strong>Actors:</strong> ${movie.Actors}</p>
@@ -204,3 +205,4 @@ function renderFavorites() {
             .catch(err => console.error(err));
     });
 }
+
